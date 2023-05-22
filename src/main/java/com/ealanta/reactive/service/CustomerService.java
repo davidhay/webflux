@@ -24,4 +24,8 @@ public class CustomerService {
     public Flux<Customer> findByFirst(String first){
         return repo.findByFirst(first);
     }
+
+    public Flux<Customer> findByLast(String last){
+        return repo.findByLast(last);
+    }
 }
