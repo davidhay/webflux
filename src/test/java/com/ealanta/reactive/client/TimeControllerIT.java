@@ -3,12 +3,9 @@ package com.ealanta.reactive.client;
 import com.ealanta.reactive.dto.TimeInfo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
-import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import reactor.test.StepVerifier;
 
@@ -18,10 +15,7 @@ import java.time.ZoneId;
 
 import static org.junit.Assert.assertTrue;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@AutoConfigureWebTestClient
-@TestPropertySource(properties = "spring.main.allow-bean-definition-overriding=true")
-public class TimeControllerIT {
+public class TimeControllerIT extends BaseIT {
 
     static final Instant INSTANT = Instant.now();
 
